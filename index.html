@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026 Calendar</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+      <style>
+        body {
+        background-color: #141414;
+      }
+        h1, h2, .h3 {
+          font-family: "Orbitron", sans-serif !important;
+          position: relative;
+        }
+        h1 {
+          color: transparent;
+          background: linear-gradient(to right, #d9ecc7 33%, #07a3b2 66%);
+          -webkit-background-clip: text;
+          background-clip: text;
+          padding-bottom: 20px;
+        }
+        h1::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          height: 5px;
+          width: 100%;
+          background: linear-gradient(90deg, rgba(0, 0, 0, 0), #07a3b2, #d9ecc7, rgba(0, 0, 0, 0));
+        }
+        .h3 {
+          color: #d9ecc7;
+          width: fit-content;
+          margin: auto;
+        }
+        .h3::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          height: 2px;
+          width: 100%;
+          background: linear-gradient(90deg, #07a3b2, #d9ecc7, rgba(0, 0, 0, 0));
+        }
+        .card {
+          margin: 15px;
+          padding: 10px;
+          position: relative;
+        }
+        .card::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 100%;
+          z-index: -1;
+          transform: translate(5px, 5px);
+          background: linear-gradient(to top right, #d9ecc7, #07a3b2) !important;
+          filter: blur(8px);
+        }
+        table {
+          padding: 30px;
+        }
+        th, td {
+          width: 14.28% !important;
+          border: 0;
+          margin: 5px;
+        }
+        th:first-child, td:first-child, .holiday a {
+          color: #ff073a;
+          text-decoration: none;
+        }
+        .holiday {
+          position: relative;
+        }
+        .holiday::before {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 10%;
+          width: 80%;
+          height: 50%;
+          border-radius: 2px;
+          background: linear-gradient( to top, #ff073a, rgba(0, 0, 0, 0));
+        }
+        .holiday:hover {
+          transform: scale(1.2);
+        }
+        #public-holidays {
+          color: white;
+          width: 85%;
+          margin: 10px auto;
+        }
+        ul {
+          text-align: left;
+          list-style-type: none;
+          padding-left: 0;
+          line-height: 2em;
+        }
+        ul li {
+          position: relative;
+          width: fit-content;
+        }
+        ul li:hover::before {
+          content: "";
+          position: absolute;
+          left: -5px;
+          height: 100%;
+          width: 105%;
+          background: linear-gradient(to top, #07a3b2, rgba(0, 0, 0, 0));
+          z-index: -1;
+          border-radius: 2px;
+        }
+        #public-holidays h2 {
+          background: linear-gradient(to right, #d9ecc7, #07a3b2);
+          -webkit-background-clip: text;
+          background-clip: text;
+          color: transparent;
+         margin-bottom: 25px;
+        }
+        #holidays-header {
+          position: relative;
+          width: fit-content;
+        }
+        #holidays-header::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: -5px;
+          width: 100%;
+          height: 3px;
+          background: linear-gradient(to right, #07a3b2, #d9ecc7, rgba(0, 0, 0, 0));
+        }
+        .date {
+          font-weight: 800;
+        }
+        .event {
+          font-style: italic;
+        }
+        .event a {
+          color: #d9ecc7;
+        }
+        footer {
+          text-align: center;
+          color: white;
+          margin: 20px auto;
+          padding-top: 10px;
+          border-top: 1px solid white;
+        }
+      </style>
+  </head>
+  <body>
+    <div class="container my-4">
+      <h1 class="text-center m-5">2026 Calendar</h1>
+      <div class="row">
+        <div class="col mb-4">
+          <div class="card bg-dark white">
+            <div class="card-header text-center h3 border-dark">January</div>
+            <div class="card-body p-2">
+              <table class="table table-dark table-sm mb-0">
+                <thead class="thead-dark">
+                  <tr class="text-center">
+                    <th>Sun</th>
+                    <th>Mon</th>
+                    <th>Tue</th>
+                    <th>Wed</th>
+                    <th>Thu</th>
+                    <th>Fri</th>
+                    <th>Sat</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="text-center">
+                    <td colspan="4"></td>
+                    <td class="holiday"><a href="https://publicholidays.ph/new-years-day/" target="_blank">1</a></td>
+                    <td>2</td>
+                    <td>3</td>
+                  </tr>
+                  <tr class="text-center">
+                    <td>4</td>
+                    <td>5</td>
+                    <td>6</td>
+                    <td>7</td>
+                    <td>8</td>
+                    <td>9</td>
+                    <td>10</td>
+                  </tr>
+                  <tr class="text-center">
+                    <td>11</td>
+                    <td>12</td>
+                    <td>13</td>
+                    <td>14</td>
+                    <td>15</td>
+                    <td>16</td>
+                    <td>17</td>
+                  </tr>
+                  <tr class="text-center">
+                    <td>18</td>
+                    <td>19</td>
+                    <td>20</td>
+                    <td>21</td>
+                    <td>22</td>
+                    <td>23</td>
+                    <td>24</td>
+                  </tr>
+                  <tr class="text-center">
+                    <td>25</td>
+                    <td>26</td>
+                    <td>27</td>
+                    <td>28</td>
+                    <td>29</td>
+                    <td>30</td>
+                    <td>31</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="col mb-4">
+          <div class="card bg-dark white">
+            <div class="card-header text-center h3 border-dark">February</div>
+            <div class="card-body p-2">
+              <table class="table table-dark table-sm mb-0">
+                <thead class="thead-dark">
+                  <tr class="text-center">
+                    <th>Sun</th>
+                    <th>Mon</th>
+                    <th>Tue</th>
+                    <th>Wed</th>
+                    <th>Thu</th>
+                    <th>Fri</th>
+                    <th>Sat</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="text-center">
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>6</td>
+                    <td>7</td>
+                  </tr>
+                  <tr class="text-center">
+                    <td>8</td>
+                    <td>9</td>
+                    <td>10</td>
+                    <td>11</td>
+                    <td>12</td>
+                    <td>13</td>
+                    <td>14</td>
+                  </tr>
+                  <tr class="text-center">
+                    <td>15</td>
+                    <td>16</td>
+                    <td class="holiday"><a href="https://publicholidays.ph/chinese-new-year/" target="_blank">17</a></td>
+                    <td>18</td>
+                    <td>19</td>
+                    <td>20</td>
+                    <td>21</td>
+                  </tr>
+                  <tr class="text-center">
+                    <td>22</td>
+                    <td>23</td>
+                    <td>24</td>
+                    <td class="holiday"><a href="https://publicholidays.ph/people-power-revolution/" target="_blank">25</a></td>
+                    <td>26</td>
+                    <td>27</td>
+                    <td>28</td>
+                  </tr>
+                  <tr class="text-center">
+                    <td colspan="7">&nbsp;</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="col mb-4">
+          <div class="card bg-dark white">
+            <div class="card-header text-center h3 border-dark">March</div>
+            <div class="card-body p-2">
+              <table class="table table-dark table-sm mb-0">
+                <thead class="thead-dark">
+                  <tr class="text-center">
+                    <th>Sun</th>
+                    <th>Mon</th>
+                    <th>Tue</th>
+                    <th>Wed</th>
+                    <th>Thu</th>
+                    <th>Fri</th>
+                    <th>Sat</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="text-center">
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>6</td>
+                    <td>7</td>
+                  </tr>
+                  <tr class="text-center">
+                    <td>8</td>
+                    <td>9</td>
+                    <td>10</td>
+                    <td>11</td>
+                    <td>12</td>
+                    <td>13</td>
+                    <td>14</td>
+                  </tr>
+                  <tr class="text-center">
+                    <td>15</td>
+                    <td>16</td>
+                    <td>17</td>
+                    <td>18</td>
+                    <td>19</td>
+                    <td>20</td>
+                    <td class="holiday"><a href="https://publicholidays.ph/eidul-fitr/" target="_blank">21</a></td>
+                  </tr>
+                  <tr class="text-center">
+                    <td>22</td>
+                    <td>23</td>
+                    <td>24</td>
+                    <td>25</td>
+                    <td>26</td>
+                    <td>27</td>
+                    <td>28</td>
+                  </tr>
+                  <tr class="text-center">
+                    <td>29</td>
+                    <td>30</td>
+                    <td>31</td>
+                    <td colspan="4"></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="col mb-4">
+          <div class="card bg-dark white">
+            <div class="card-header text-center h3 border-dark">April</div>
+            <div class="card-body p-2">
+              <table class="table table-dark table-sm mb-0">
+                <thead class="thead-dark">
+                  <tr class="text-center">
+                    <th>Sun</th>
+                    <th>Mon</th>
+                    <th>Tue</th>
+                    <th>Wed</th>
+                    <th>Thu</th>
+                    <th>Fri</th>
+                    <th>Sat</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="text-center">
+                    <td colspan="3"></td>
+                    <td>1</td>
+                    <td class="holiday"><a href="https://publicholidays.ph/easter/" target="_blank">2</a></td>
+                    <td class="holiday"><a href="https://publicholidays.ph/easter/">3</a></td>
+                    <td class="holiday"><a href="https://publicholidays.ph/easter/" target="_blank">4</a></td>
+                  </tr>
+                  <tr class="text-center">
+                    <td>5</td>
+                    <td>6</td>
+                    <td>7</td>
+                    <td>8</td>
+                    <td class="holiday"><a href="https://publicholidays.ph/araw-ng-kagitingan/" target="_blank">9</a></td>
+                    <td>10</td>
+                    <td>11</td>
+                  </tr>
+                  <tr class="text-center">
+                    <td>12</td>
+                    <td>13</td>
+                    <td>14</td>
+                    <td>15</td>
+                    <td>16</td>
+                    <td>17</td>
+                    <td>18</td>
+                  </tr>
+                  <tr class="text-center">
+                    <td>19</td>
+                    <td>20</td>
+                    <td>21</td>
+                    <td>22</td>
+                    <td>23</td>
+                    <td>24</td>
+                    <td>25</td>
+                  </tr>
+                  <tr class="text-center">
+                    <td>26</td>
+                    <td>27</td>
+                    <td>28</td>
+                    <td>29</td>
+                    <td>30</td>
+                    <td colspan="2"></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="col mb-4">
+          <div class="card bg-dark white">
+            <div class="card-header text-center h3 border-dark">May</div>
+            <div class="card-body p-2">
+              <table class="table table-dark table-sm mb-0">
+                <thead class="thead-dark">
+                  <tr class="text-center">
+                    <th>Sun</th>
+                    <th>Mon</th>
+                    <th>Tue</th>
+                    <th>Wed</th>
+                    <th>Thu</th>
+                    <th>Fri</th>
+                    <th>Sat</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="text-center">
+                    <td colspan="5"></td>
+                    <td class="holiday"><a href="https://publicholidays.ph/labor-day/" target="_blank">1</a></td>
+                    <td>2</td>
+                  </tr>
+                  <tr class="text-center">
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>6</td>
+                    <td>7</td>
+                    <td>8</td>
+                    <td>9</td>
+                  </tr>
+                  <tr class="text-center">
+                    <td>10</td>
+                    <td>11</td>
+                    <td>12</td>
+                    <td>13</td>
+                    <td>14</td>
+                    <td>15</td>
+                    <td>16</td>
+                  </tr>
+                  <tr class="text-center">
+                    <td>17</td>
+                    <td>18</td>
+                    <td>19</td>
+                    <td>20</td>
+                    <td>21</td>
+                    <td>22</td>
+                    <td>23</td>
+                  </tr>
+                  <tr class="text-center">
+                    <td><sup>24</sup>/<sub>31</sub></td>
+                    <td>25</td>
+                    <td>26</td>
+                    <td class="holiday"><a href="https://publicholidays.ph/eidul-adha/" target="_blank">27</a></td>
+                    <td>28</td>
+                    <td>29</td>
+                    <td>30</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="col mb-4">
+          <div class="card bg-dark white">
+            <div class="card-header text-center h3 border-dark">June</div>
+            <div class="card-body p-2">
+              <table class="table table-dark table-sm mb-0">
+                <thead class="thead-dark">
+                  <tr class="text-center">
+                    <th>Sun</th>
+                    <th>Mon</th>
+                    <th>Tue</th>
+                    <th>Wed</th>
+                    <th>Thu</th>
+                    <th>Fri</th>
+                    <th>Sat</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="text-center">
+                    <td></td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>6</td>
+                  </tr>
+                  <tr class="text-center">
+                    <td>7</td>
+                    <td>8</td>
+                    <td>9</td>
+                    <td>10</td>
+                    <td>11</td>
+                    <td class="holiday"><a href="https://publicholidays.ph/independence-day/" target="_blank">12</a></td>
+                    <td>13</td>
+                  </tr>
+                  <tr class="text-center">
+                    <td>14</td>
+                    <td>15</td>
+                    <td>16</td>
+                    <td>17</td>
+                    <td>18</td>
+                    <td>19</td>
+                    <td>20</td>
+                  </tr>
+                  <tr class="text-center">
+                    <td>21</td>
+                    <td>22</td>
+                    <td>23</td>
+                    <td>24</td>
+                    <td>25</td>
+                    <td>26</td>
+                    <td>27</td>
+                  </tr>
+                  <tr class="text-center">
+                    <td>28</td>
+                    <td>29</td>
+                    <td>30</td>
+                    <td colspan="4"></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="col mb-4">
+          <div class="card bg-dark white">
+            <div class="card-header text-center h3 border-dark">July</div>
+            <div class="card-body p-2">
+              <table class="table table-dark table-sm mb-0">
+                <thead class="thead-dark">
+                  <tr class="text-center">
+                    <th>Sun</th>
+                    <th>Mon</th>
+                    <th>Tue</th>
+                    <th>Wed</th>
+                    <th>Thu</th>
+                    <th>Fri</th>
+                    <th>Sat</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="text-center">
+                    <td colspan="3"></td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                  </tr>
+                  <tr class="text-center">
+                    <td>5</td>
+                    <td>6</td>
+                    <td>7</td>
+                    <td>8</td>
+                    <td>9</td>
+                    <td>10</td>
+                    <td>11</td>
+                  </tr>
+                  <tr class="text-center">
+                    <td>12</td>
+                    <td>13</td>
+                    <td>14</td>
+                    <td>15</td>
+                    <td>16</td>
+                    <td>17</td>
+                    <td>18</td>
+                  </tr>
+                  <tr class="text-center">
+                    <td>19</td>
+                    <td>20</td>
+                    <td>21</td>
+                    <td>22</td>
+                    <td>23</td>
+                    <td>24</td>
+                    <td>25</td>
+                  </tr>
+                  <tr class="text-center">
+                    <td>26</td>
+                    <td>27</td>
+                    <td>28</td>
+                    <td>29</td>
+                    <td>30</td>
+                    <td>31</td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="col mb-4">
+          <div class="card bg-dark white">
+            <div class="card-header text-center h3 border-dark">August</div>
+            <div class="card-body p-2">
+              <table class="table table-dark table-sm mb-0">
+                <thead class="thead-dark">
+                  <tr class="text-center">
+                    <th>Sun</th>
+                    <th>Mon</th>
+                    <th>Tue</th>
+                    <th>Wed</th>
+                    <th>Thu</th>
+                    <th>Fri</th>
+                    <th>Sat</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="text-center">
+                    <td colspan="6"></td>
+                    <td>1</td>
+                  </tr>
+                  <tr class="text-center">
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>6</td>
+                    <td>7</td>
+                    <td>8</td>
+                  </tr>
+                  <tr class="text-center">
+                    <td>9</td>
+                    <td>10</td>
+                    <td>11</td>
+                    <td>12</td>
+                    <td>13</td>
+                    <td>14</td>
+                    <td>15</td>
+                  </tr>
+                  <tr class="text-center">
+                    <td>16</td>
+                    <td>17</td>
+                    <td>18</td>
+                    <td>19</td>
+                    <td>20</td>
+                    <td class="holiday"><a href="https://publicholidays.ph/ninoy-aquino-day/" target="_blank">21</a></td>
+                    <td>22</td>
+                  </tr>
+                  <tr class="text-center">
+                    <td><sup>23</sup>/<sub>30</sub></td>
+                    <td class="holiday"><sup>24</sup>/<sub><a href="https://publicholidays.ph/national-heroes-day/" target="_blank">31</a></sub></td>
+                    <td>25</td>
+                    <td>26</td>
+                    <td>27</td>
+                    <td>28</td>
+                    <td>29</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="col mb-4">
+          <div class="card bg-dark white">
+            <div class="card-header text-center h3 border-dark">September</div>
+            <div class="card-body p-2">
+              <table class="table table-dark table-sm mb-0">
+                <thead class="thead-dark">
+                  <tr class="text-center">
+                    <th>Sun</th>
+                    <th>Mon</th>
+                    <th>Tue</th>
+                    <th>Wed</th>
+                    <th>Thu</th>
+                    <th>Fri</th>
+                    <th>Sat</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="text-center">
+                    <td colspan="2"></td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                  </tr>
+                  <tr class="text-center">
+                    <td>6</td>
+                    <td>7</td>
+                    <td>8</td>
+                    <td>9</td>
+                    <td>10</td>
+                    <td>11</td>
+                    <td>12</td>
+                  </tr>
+                  <tr class="text-center">
+                    <td>13</td>
+                    <td>14</td>
+                    <td>15</td>
+                    <td>16</td>
+                    <td>17</td>
+                    <td>18</td>
+                    <td>19</td>
+                  </tr>
+                  <tr class="text-center">
+                    <td>20</td>
+                    <td>21</td>
+                    <td>22</td>
+                    <td>23</td>
+                    <td>24</td>
+                    <td>25</td>
+                    <td>26</td>
+                  </tr>
+                  <tr class="text-center">
+                    <td>27</td>
+                    <td>28</td>
+                    <td>29</td>
+                    <td>30</td>
+                    <td colspan="3"></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="col mb-4">
+          <div class="card bg-dark white">
+            <div class="card-header text-center h3 border-dark">October</div>
+            <div class="card-body p-2">
+              <table class="table table-dark table-sm mb-0">
+                <thead class="thead-dark">
+                  <tr class="text-center">
+                    <th>Sun</th>
+                    <th>Mon</th>
+                    <th>Tue</th>
+                    <th>Wed</th>
+                    <th>Thu</th>
+                    <th>Fri</th>
+                    <th>Sat</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="text-center">
+                    <td colspan="4"></td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                  </tr>
+                  <tr class="text-center">
+                    <td>4</td>
+                    <td>5</td>
+                    <td>6</td>
+                    <td>7</td>
+                    <td>8</td>
+                    <td>9</td>
+                    <td>10</td>
+                  </tr>
+                  <tr class="text-center">
+                    <td>11</td>
+                    <td>12</td>
+                    <td>13</td>
+                    <td>14</td>
+                    <td>15</td>
+                    <td>16</td>
+                    <td>17</td>
+                  </tr>
+                  <tr class="text-center">
+                    <td>18</td>
+                    <td>19</td>
+                    <td>20</td>
+                    <td>21</td>
+                    <td>22</td>
+                    <td>23</td>
+                    <td>24</td>
+                  </tr>
+                  <tr class="text-center">
+                    <td>25</td>
+                    <td>26</td>
+                    <td>27</td>
+                    <td>28</td>
+                    <td>29</td>
+                    <td>30</td>
+                    <td>31</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="col mb-4">
+          <div class="card bg-dark white">
+            <div class="card-header text-center h3 border-dark">November</div>
+            <div class="card-body p-2">
+              <table class="table table-dark table-sm mb-0">
+                <thead class="thead-dark">
+                  <tr class="text-center">
+                    <th>Sun</th>
+                    <th>Mon</th>
+                    <th>Tue</th>
+                    <th>Wed</th>
+                    <th>Thu</th>
+                    <th>Fri</th>
+                    <th>Sat</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="text-center">
+                    <td class="holiday"><a href="https://publicholidays.ph/all-saints-day/" target="_blank">1</a></td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>6</td>
+                    <td>7</td>
+                  </tr>
+                  <tr class="text-center">
+                    <td>8</td>
+                    <td>9</td>
+                    <td>10</td>
+                    <td>11</td>
+                    <td>12</td>
+                    <td>13</td>
+                    <td>14</td>
+                  </tr>
+                  <tr class="text-center">
+                    <td>15</td>
+                    <td>16</td>
+                    <td>17</td>
+                    <td>18</td>
+                    <td>19</td>
+                    <td>20</td>
+                    <td>21</td>
+                  </tr>
+                  <tr class="text-center">
+                    <td>22</td>
+                    <td>23</td>
+                    <td>24</td>
+                    <td>25</td>
+                    <td>26</td>
+                    <td>27</td>
+                    <td>28</td>
+                  </tr>
+                  <tr class="text-center">
+                    <td>29</td>
+                    <td class="holiday"><a href="https://publicholidays.ph/bonifacio-day/" target="_blank">30</a></td>
+                    <td colspan="5"></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="col mb-4">
+          <div class="card bg-dark white">
+            <div class="card-header text-center h3 border-dark">December</div>
+            <div class="card-body p-2">
+              <table class="table table-dark table-sm mb-0">
+                <thead class="thead-dark">
+                  <tr class="text-center">
+                    <th>Sun</th>
+                    <th>Mon</th>
+                    <th>Tue</th>
+                    <th>Wed</th>
+                    <th>Thu</th>
+                    <th>Fri</th>
+                    <th>Sat</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="text-center">
+                    <td colspan="2"></td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                  </tr>
+                  <tr class="text-center">
+                    <td>6</td>
+                    <td>7</td>
+                    <td class="holiday"><a href="https://publicholidays.ph/immaculate-conception/" target="_blank">8</a></td>
+                    <td>9</td>
+                    <td>10</td>
+                    <td>11</td>
+                    <td>12</td>
+                  </tr>
+                  <tr class="text-center">
+                    <td>13</td>
+                    <td>14</td>
+                    <td>15</td>
+                    <td>16</td>
+                    <td>17</td>
+                    <td>18</td>
+                    <td>19</td>
+                  </tr>
+                  <tr class="text-center">
+                    <td>20</td>
+                    <td>21</td>
+                    <td>22</td>
+                    <td>23</td>
+                    <td>24</td>
+                    <td class="holiday"><a href="https://publicholidays.ph/christmas/" target="_blank">25</a></td>
+                    <td>26</td>
+                  </tr>
+                  <tr class="text-center">
+                    <td>27</td>
+                    <td>28</td>
+                    <td>29</td>
+                    <td class="holiday"><a href="https://publicholidays.ph/rizal-day/" target="_blank">30</a></td>
+                    <td>31</td>
+                    <td colspan="2"></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="public-holidays">
+      <div id="holidays-header">
+      <h2 class="h2">2026 Public Holidays</h2>
+      </div>
+      <ul>
+        <li>
+          <span class="date">January 1, 2026</span> - 
+          <span class="event"><a href="https://publicholidays.ph/new-years-day/" target="_blank">New Year</a></span>
+         </li>
+        <li>
+          <span class="date">February 17, 2026</span> - 
+          <span class="event"><a href="https://publicholidays.ph/chinese-new-year/">Chinese New Year</a></span>
+         </li>
+        <li>
+          <span class="date">February 25, 2026</span> - 
+          <span class="event"><a href="https://publicholidays.ph/people-power-revolution/">EDSA Revolution Anniversary</a></span>
+         </li>
+        <li>
+          <span class="date">March 21, 2026</span> - 
+          <span class="event"><a href="https://publicholidays.ph/eidul-fitr/">Eidul Fitr</a></span>
+         </li>
+        <li>
+          <span class="date">April 2, 2026</span> - 
+          <span class="event"><a href="https://publicholidays.ph/easter/">Maundy Thursday</a></span>
+         </li>
+        <li>
+          <span class="date">April 3, 2026</span> - 
+          <span class="event"><a href="https://publicholidays.ph/easter/">Good Friday</a></span>
+         </li>
+        <li>
+          <span class="date">April 4, 2026</span> - 
+          <span class="event"><a href="https://publicholidays.ph/easter/">Black Saturday</a></span>
+         </li>
+        <li>
+          <span class="date">April 9, 2026</span> - 
+          <span class="event"><a href="https://publicholidays.ph/araw-ng-kagitingan/">Day of Valor</a></span>
+         </li>
+        <li>
+          <span class="date">May 1, 2026</span> - 
+          <span class="event"><a href="https://publicholidays.ph/labor-day/">Labor Day</a></span>
+         </li>
+        <li>
+          <span class="date">May 27, 2026</span> - 
+          <span class="event"><a href="https://publicholidays.ph/eidul-adha/">Eidul Adha</a></span>
+         </li>
+        <li>
+          <span class="date">June 12, 2026</span> - 
+          <span class="event"><a href="https://publicholidays.ph/independence-day/">Independence Day</a></span>
+         </li>
+        <li>
+          <span class="date">August 21, 2026</span> - 
+          <span class="event"><a href="https://publicholidays.ph/ninoy-aquino-day/">Ninoy Aquino Day</a></span>
+         </li>
+        <li>
+          <span class="date">August 31, 2026</span> - 
+          <span class="event"><a href="https://publicholidays.ph/national-heroes-day/">National Heroes Day</a></span>
+         </li>
+        <li>
+          <span class="date">November 1, 2026</span> - 
+          <span class="event"><a href="https://publicholidays.ph/all-saints-day/">All Saints' Day</a></span>
+         </li>
+        <li>
+          <span class="date">November 30, 2026</span> - 
+          <span class="event"><a href="https://publicholidays.ph/bonifacio-day/">Bonifacio Day</a></span>
+         </li>
+        <li>
+          <span class="date">December 8, 2026</span> - 
+          <span class="event"><a href="https://publicholidays.ph/immaculate-conception/">Immaculate Conception</a></span>
+         </li>
+        <li>
+          <span class="date">December 25, 2026</span> - 
+          <span class="event"><a href="https://publicholidays.ph/christmas/">Christmas Day</a></span>
+         </li>
+        <li>
+          <span class="date">December 30, 2026</span> - 
+          <span class="event"><a href="https://publicholidays.ph/rizal-day/">Rizal Day</a></span>
+         </li>
+      </ul>
+    </div>
+    <footer>
+      Global Reciprocal Colleges A.Y. 25-26 | Jayson Bernardo | IT201 | WEBSYS
+    </footer>
+  </body>
+</html>
