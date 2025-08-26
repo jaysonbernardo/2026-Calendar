@@ -1,0 +1,146 @@
+        body {
+        background-color: #141414;
+      }
+        h1, h2, .h3 {
+          font-family: "Orbitron", sans-serif !important;
+          position: relative;
+        }
+        h1 {
+          color: transparent;
+          background: linear-gradient(to right, #d9ecc7 33%, #07a3b2 66%);
+          -webkit-background-clip: text;
+          background-clip: text;
+          padding-bottom: 20px;
+        }
+        h1::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          height: 5px;
+          width: 100%;
+          background: linear-gradient(90deg, rgba(0, 0, 0, 0), #07a3b2, #d9ecc7, rgba(0, 0, 0, 0));
+        }
+        .h3 {
+          color: #d9ecc7;
+          width: fit-content;
+          margin: auto;
+        }
+        .h3::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          height: 2px;
+          width: 100%;
+          background: linear-gradient(90deg, #07a3b2, #d9ecc7, rgba(0, 0, 0, 0));
+        }
+        .card {
+          margin: 15px 10px;
+          padding: 5px;
+          position: relative;
+        }
+        .card::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 100%;
+          z-index: -1;
+          transform: translate(5px, 5px);
+          background: linear-gradient(to top right, #d9ecc7, #07a3b2) !important;
+          filter: blur(8px);
+        }
+        table {
+          padding: 30px;
+        }
+        th, td {
+          width: 14.28% !important;
+          border: 0;
+          margin: 5px;
+        }
+        th:first-child, td:first-child, .holiday a {
+          color: #ff073a;
+        }
+        .holiday {
+          position: relative;
+        }
+        .holiday::before {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 10%;
+          width: 80%;
+          height: 50%;
+          border-radius: 2px;
+          background: linear-gradient( to top, #ff073a, rgba(0, 0, 0, 0));
+        }
+        .holiday:hover {
+          transform: scale(1.2);
+        }
+        #public-holidays {
+          color: white;
+          width: 85%;
+          margin: 10px auto;
+        }
+        ul {
+          text-align: left;
+          list-style-type: none;
+          padding-left: 0;
+          line-height: 2em;
+        }
+        ul li {
+          position: relative;
+          width: fit-content;
+        }
+        ul li:hover::before {
+          content: "";
+          position: absolute;
+          left: -5px;
+          height: 100%;
+          width: 105%;
+          background: linear-gradient(to top, #07a3b2, rgba(0, 0, 0, 0));
+          z-index: -1;
+          border-radius: 2px;
+        }
+        #public-holidays {
+          width: fit-content;
+          margin: auto;
+        }
+        #public-holidays h2 {
+          background: linear-gradient(to right, #d9ecc7, #07a3b2);
+          -webkit-background-clip: text;
+          background-clip: text;
+          color: transparent;
+         margin-bottom: 25px;
+        }
+        #holidays-header {
+          position: relative;
+          width: fit-content;
+        }
+        #holidays-header::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: -5px;
+          width: 100%;
+          height: 3px;
+          background: linear-gradient(to right, #07a3b2, #d9ecc7, rgba(0, 0, 0, 0));
+        }
+        .date {
+          font-weight: 800;
+        }
+        .event {
+          font-style: italic;
+        }
+        .event a {
+          color: #d9ecc7;
+        }
+        footer {
+          text-align: center;
+          color: white;
+          margin: 20px auto;
+          padding-top: 10px;
+          border-top: 1px solid white;
+        }
